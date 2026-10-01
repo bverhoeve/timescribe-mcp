@@ -19,7 +19,7 @@ import { createFixtureDb } from "./fixture.js";
 describe("resolveDbPath", () => {
   it("has OS defaults for macOS and Windows only", () => {
     expect(defaultDbPaths("darwin", {}, "/Users/me")).toEqual([
-      "/Users/me/Library/Application Support/timescribe/database/database.sqlite",
+      join("/Users/me", "Library", "Application Support", "timescribe", "database", "database.sqlite"),
     ]);
     expect(defaultDbPaths("win32", { APPDATA: "C:\\Users\\me\\AppData\\Roaming" }, "C:\\Users\\me")[0]).toMatch(
       /timescribe[\\/]database[\\/]database\.sqlite$/,
