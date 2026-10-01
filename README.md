@@ -38,7 +38,7 @@ Add to `claude_desktop_config.json`:
 Found automatically:
 
 - macOS: `~/Library/Application Support/timescribe/database/database.sqlite`
-- Windows: `%APPDATA%\timescribe\database\database.sqlite`
+- Windows: `%APPDATA%\timescribe\database\database.sqlite` (unverified; if it isn't found, set `TIMESCRIBE_DB_PATH`)
 
 Elsewhere, set `TIMESCRIBE_DB_PATH` to the full path of `database.sqlite`.
 
@@ -48,7 +48,7 @@ Elsewhere, set `TIMESCRIBE_DB_PATH` to the full path of `database.sqlite`.
 |---|---|
 | `list_projects` | All projects, including archived ones (`archived: true`) |
 | `get_time_summary` | Work, break and scheduled hours for a date range, grouped per `project` (default), `day` or `project_day`, plus the running timer |
-| `list_entries` | Individual work/break entries in a range, filterable by `project_id` and `type`, max 500 |
+| `list_entries` | Individual work/break entries in a range, filterable by `project_id` and `type`, max 500; `truncated: true` means narrow the range |
 
 Dates are `YYYY-MM-DD`, inclusive, in the timezone set in TimeScribe. Leave out `from` and `to` for the current week (Monday to Sunday). Output times are ISO 8601 with offset.
 
