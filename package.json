@@ -1,0 +1,31 @@
+{
+  "name": "timescribe-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server that gives Claude read access to your local TimeScribe time tracking data",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "timescribe-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && vitest run",
+    "inspect": "tsc && npx @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}
